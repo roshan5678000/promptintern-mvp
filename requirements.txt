@@ -3,3 +3,4 @@ streamlit
 PyPDF2
 sentence-transformers
 openai
+openai>=1.0.0
