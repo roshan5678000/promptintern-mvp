@@ -26,11 +26,12 @@ def extract_text_from_pdf(pdf_file):
 # Helper to get embedding from OpenAI
 def get_embedding(text):
     try:
-        response = openai.Embedding.create(
-            input=text,
+        client = openai.OpenAI()
+        response = client.embeddings.create(
+            input=[text],
             model="text-embedding-ada-002"
         )
-        return response["data"][0]["embedding"]
+        return response.data[0].embedding
     except Exception as e:
         st.error(f"Embedding error: {e}")
         return None
