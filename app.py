@@ -22,7 +22,7 @@ prompt = st.text_input("Example: 'Remote intern with React and Canva skills'", "
 
 # Matching logic
 if st.button("🔍 Match Now") and prompt:
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+    model = SentenceTransformer("paraphrase-MiniLM-L3-v2")
     prompt_embedding = model.encode(prompt, convert_to_tensor=True)
     matches = []
 
